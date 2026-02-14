@@ -21,6 +21,7 @@ body {
     height: 400px;
     cursor: pointer;
     transition: transform 0.6s;
+    transform: scale(0.7);
 }
 
 .envelope-front {
@@ -219,6 +220,12 @@ button:hover {
     font-size: clamp(2.5rem, 10vw, 6rem);
     color: #ff3366;
     margin: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
 }
 
 .caveat-1 {
@@ -226,4 +233,51 @@ button:hover {
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
+}
+
+@media (max-width: 600px) {
+    .yay-item img {
+        width: 120px !important;
+        height: auto !important;
+    }
+
+    #yay-container h2 {
+        font-size: 18px;
+    }
+
+    .envelope {
+        transform: scale(0.9);
+    }
+
+    .buttons button {
+        padding: 12px 18px;
+        font-size: 16px;
+    }
+
+    bodi {
+        overflow-x: hidden;
+    }
+
+    #yay-container {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+}
+@media (max-width: 480px) {
+    .yay-item img {
+        width: 100px !important;
+        position: absolute;
+        will-change: transform;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+    }
+
+    #yay-container h2 {
+        font-size: 18px;
+    }
+
+    .envelope {
+        transform: scale(0.5);
+    }
 }

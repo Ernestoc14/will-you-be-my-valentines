@@ -74,7 +74,11 @@ export default function Page() {
                 img.x += img.dx;
                 img.y += img.dy;
 
-                element.style.transform = `translate(${img.x}px, ${img.y}px)`;
+                const roundedX = Math.round(img.x);
+                const roundedY = Math.round(img.y);
+
+                element.style.transform = `translate(${roundedX}px, ${roundedY}px)`;
+
             })
             animationFrame = requestAnimationFrame(moveYay);
         };
@@ -144,7 +148,6 @@ export default function Page() {
         <div className="hearts" ref={heartsRef}></div>
 
         <div id="yay-container" ref={yayRef}>
-            {/* {[1, 2, 3].map((_, index) => ( */}
             {["/chimuelo.jpg", "/capy.jpeg", "/pica.jpeg"].map((src, index) => (
                 <div key={index} className="yay-item" style={{ position: "fixed" }}>
                 <Image
